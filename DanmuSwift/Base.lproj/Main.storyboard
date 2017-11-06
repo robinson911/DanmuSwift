@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="300" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="preStart"/>
                                 <connections>
                                     <action selector="StartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MX6-wa-TLN"/>
                                 </connections>
@@ -54,6 +54,13 @@
                                     <action selector="StopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3bV-FS-mqQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先点击preStart，然后再点击Send来发送弹幕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-ZZ-ixq">
+                                <rect key="frame" x="16" y="194" width="345" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

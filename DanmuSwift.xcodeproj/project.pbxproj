@@ -300,10 +300,10 @@
 				INFOPLIST_FILE = DanmuSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.transfar.TransfarShipper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.transfar.transfarShipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "bb8e8391-7a67-4c9f-b447-a83a7c8ee456";
+				PROVISIONING_PROFILE_SPECIFIER = transfarShipper_dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,10 +319,10 @@
 				INFOPLIST_FILE = DanmuSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.transfar.TransfarShipper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.transfar.transfarShipper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "bb8e8391-7a67-4c9f-b447-a83a7c8ee456";
+				PROVISIONING_PROFILE_SPECIFIER = transfarShipper_dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

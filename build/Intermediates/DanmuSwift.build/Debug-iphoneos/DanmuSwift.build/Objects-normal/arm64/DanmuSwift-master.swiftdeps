@@ -1,9 +1,9 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65.2 clang-900.0.37)"
 options: "88ede5f282ac221d946d461f5a0e7bf3"
-build_time: [1509949853, 708684000]
+build_time: [1509951272, 537869000]
 inputs:
-  "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/DanmuManage/DanmuManage.swift": [1509948797, 0]
-  "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/ViewController.swift": [1509943048, 0]
+  "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/DanmuManage/DanmuManage.swift": [1509950811, 0]
+  "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/ViewController.swift": [1509950811, 0]
   "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/DanmuManage/DanmuDefine.swift": [1509695686, 0]
   "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/DanmuManage/DanmuView.swift": [1509948265, 0]
   "/Users/sunww/GitHub/DanmuSwift/DanmuSwift/AppDelegate.swift": [1509524407, 0]
