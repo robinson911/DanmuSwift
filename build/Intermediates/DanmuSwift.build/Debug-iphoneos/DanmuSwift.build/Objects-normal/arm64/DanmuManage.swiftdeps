@@ -639,6 +639,7 @@ depends-member:
 - !private ["s9EquatableP", "clearScreen"]
 - !private ["s9EquatableP", "commonModes"]
 - !private ["s9EquatableP", "count"]
+- !private ["s9EquatableP", "curveLinear"]
 - !private ["s9EquatableP", "displayLink"]
 - !private ["s9EquatableP", "enumerateObjects"]
 - !private ["s9EquatableP", "fatalError"]
@@ -702,6 +703,7 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "add"]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "curveLinear"]
 - !private ["s25ExpressibleByArrayLiteralP", "enumerateObjects"]
 - !private ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "lastObject"]
@@ -1191,6 +1193,7 @@ depends-member:
 - ["So14OperationQueueC", "init"]
 - !private ["So14OperationQueueC", "maxConcurrentOperationCount"]
 - !private ["So14OperationQueueC", "name"]
+- !private ["s9OptionSetP", "curveLinear"]
 - !private ["s22RandomAccessCollectionP", "append"]
 - !private ["s22RandomAccessCollectionP", "count"]
 - !private ["s22RandomAccessCollectionP", "removeAll"]
@@ -1199,6 +1202,7 @@ depends-member:
 - ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "removeAll"]
 - !private ["s16RawRepresentableP", "commonModes"]
+- !private ["s16RawRepresentableP", "curveLinear"]
 - !private ["So7RunLoopC", "main"]
 - !private ["SC11RunLoopModeV", "commonModes"]
 - !private ["s8SequenceP", "add"]
@@ -1213,6 +1217,7 @@ depends-member:
 - !private ["s8SequenceP", "removeLastObject"]
 - !private ["s8SequenceP", "removeObject"]
 - !private ["s8SequenceP", "subscript"]
+- !private ["s10SetAlgebraP", "curveLinear"]
 - ["s13SignedIntegerP", "init"]
 - ["s13SignedNumericP", "init"]
 - !private ["s12StaticStringV", "init"]
@@ -2109,6 +2114,7 @@ depends-member:
 - ["So6UIViewC", "visibleDanmakus"]
 - !private ["So6UIViewC", "yIdx"]
 - ["So6UIViewC", ""]
+- !private ["SC22UIViewAnimationOptionsV", "curveLinear"]
 - !private ["s14_ArrayProtocolP", "append"]
 - !private ["s14_ArrayProtocolP", "count"]
 - !private ["s14_ArrayProtocolP", "removeAll"]
@@ -2391,12 +2397,14 @@ depends-nominal:
 - !private "So9OS_objectC"
 - !private "So9OperationC"
 - "So14OperationQueueC"
+- !private "s9OptionSetP"
 - !private "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - !private "s16RawRepresentableP"
 - !private "So7RunLoopC"
 - !private "SC11RunLoopModeV"
 - "s8SequenceP"
+- !private "s10SetAlgebraP"
 - "s13SignedIntegerP"
 - "s13SignedNumericP"
 - !private "s12StaticStringV"
@@ -2420,6 +2428,7 @@ depends-nominal:
 - "So30UIResponderStandardEditActionsP"
 - "So18UITraitEnvironmentP"
 - "So6UIViewC"
+- !private "SC22UIViewAnimationOptionsV"
 - !private "s14_ArrayProtocolP"
 - "s23_BidirectionalIndexableP"
 - "s18_BitwiseOperationsP"

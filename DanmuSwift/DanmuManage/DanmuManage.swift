@@ -202,12 +202,12 @@ extension DanmuManage {
                 if danmaku.remainingTime == nil{
                     danmaku.remainingTime = 0;
                 }
-                UIView.animate(withDuration:Double(danmaku.remainingTime!), animations: {
+                
+                UIView.animate(withDuration: Double(danmaku.remainingTime!), delay: 0, options: .curveLinear, animations: {
                     let  yx : CGFloat = (cell!.size?.width)!;
                     cell?.frame = CGRect(x: -yx, y: (cell?.py!)!, width: (cell?.size!.width)!, height: (cell?.size!.height)!);
                 }, completion: { (finished : Bool) in
-                    
-                })
+                });
             }
         };
     }
@@ -313,15 +313,15 @@ extension DanmuManage {
     func resumeShowingDanmakus(){
         if ((self.visibleDanmakus()?.count) != nil) {
             let renderingDanmakus = self.visibleDanmakus() as! [DanmuView];
-            for danmaku : DanmuView in renderingDanmakus{
-                if danmaku.remainingTime == nil {
-                    danmaku.remainingTime = 0;
+            for cell : DanmuView in renderingDanmakus{
+                if cell.remainingTime == nil {
+                    cell.remainingTime = 0;
                 }
-                
-                UIView.animate(withDuration: Double(danmaku.remainingTime!), animations:{
-                    let  yx : CGFloat = (danmaku.size?.width)!;
-                    danmaku.frame = CGRect(x: -yx, y: danmaku.py!, width: danmaku.size!.width, height: danmaku.size!.height);
-                }, completion: { (finished) in
+
+                UIView.animate(withDuration: Double(cell.remainingTime!), delay: 0, options: .curveLinear, animations: {
+                    let  yx : CGFloat = (cell.size?.width)!;
+                    cell.frame = CGRect(x: -yx, y: (cell.py!), width: (cell.size!.width), height: (cell.size!.height));
+                }, completion: { (finished : Bool) in
                 });
             }
         }
