@@ -23,7 +23,7 @@ extension ViewController {
     
     @IBAction func StartAction(_ sender: Any) {
         print(sender);
-        self.danmuMange?.play();
+        self.danmuMange?.prePlay();
     }
 
     @IBAction func PauseAction(_ sender: Any) {
