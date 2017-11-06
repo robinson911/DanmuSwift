@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.danmuMange = DanmuManage.init(frame: CGRect(x: 0, y: 0, width: AppWidth, height: 300));
-        self.danmuMange?.registerClass(cellClass: DanmuView.layerClass ,identifier :"cell");
+        self.danmuMange?.registerClass(DanmuView.layerClass ,"cell");
         self.view.addSubview(self.danmuMange!);
     }
 }

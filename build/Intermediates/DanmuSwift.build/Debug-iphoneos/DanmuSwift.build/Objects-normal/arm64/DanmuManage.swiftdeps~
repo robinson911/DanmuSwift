@@ -75,7 +75,6 @@ depends-top-level:
 - !private "fatalError"
 - !private "ljFrameInterval"
 - !private "print"
-- !private "||"
 depends-member:
 - !private ["Sa", "append"]
 - !private ["Sa", "count"]
