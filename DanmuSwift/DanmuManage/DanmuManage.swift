@@ -46,6 +46,7 @@ class DanmuManage: UIView {
         return dict
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame);
         
@@ -56,8 +57,7 @@ class DanmuManage: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: 发生弹幕
+    
     func sendDanmu (_ ljDanmu : DanmuView?){
         if ljDanmu == nil {
             return ;
@@ -68,8 +68,8 @@ class DanmuManage: UIView {
         
         self.loadDanmakusFromFetchDanmakusArray();
     }
-    // MARK: 弹幕准备
-    func prePlay() {
+    
+    func play() {
         if (self.isPlaying) { return };
         self.isPlaying = true;
         
@@ -83,22 +83,25 @@ class DanmuManage: UIView {
             self.displayLink?.add(to: RunLoop.main, forMode: .commonModes)
         }
     }
-    // MARK: 弹幕暂停
+    
     func pause() {
         if (!self.isPlaying) { return };
         self.isPlaying = false;
         
         self.displayLink?.isPaused = true;
+        self.displayLink?.invalidate();
+        self.displayLink = nil;
         self.pauseShowingDanmakus();
     }
-    // MARK: 弹幕停止
+    
     func stop() {
         self.isPlaying = false;
+        self.displayLink?.isPaused = true;
         self.displayLink?.invalidate();
         self.displayLink = nil;
         self.clearScreen();
     }
-    // MARK: 弹幕清楚屏幕
+    
     func clearScreen(){
         print("clearScreen");
         self.recycleDanmaku(danmakuArrays: self.renderingDanmakusArray as! Array<DanmuView>);
@@ -109,21 +112,23 @@ class DanmuManage: UIView {
 }
 
 extension DanmuManage {
-  // MARK: CADisplayLink所有视图遍历---时间递减
-  @objc  func handleData() {
+    // MARK - CADisplayLink所有视图遍历---时间递减
+    @objc  func handleData() {
         self.loadDanmakusFromFetchDanmakusArray();
         self.renderDanmakusForTime();
     }
-   
+    
     func loadDanmakusFromFetchDanmakusArray() {
+        
         let operation : BlockOperation = BlockOperation.init(block: {
-            
-//            var number = "remainingTime <= 0";
-//            var numberPre = NSPredicate(format: "SELF MATCHES %@", number);
-//            var danmakuArrays = numberPre.evaluate(with: self.fetchDanmakusArray);
-//            let danmakuArrays : [DanmuView] = self.fetchDanmakusArray.filter(NSPredicate.init(format: "SELF MATCHES %@", number));
-            
             OSSpinLockLock(&self.spinLock);
+            
+            //            var number = "remainingTime <= 0";
+            //            var numberPre = NSPredicate(format: "SELF MATCHES %@", number);
+            //            var danmakuArrays = numberPre.evaluate(with: self.fetchDanmakusArray);
+            
+            //            let danmakuArrays : [DanmuView] = self.fetchDanmakusArray.filter(NSPredicate.init(format: "SELF MATCHES %@", number));
+            
             var danmakuArrays : [DanmuView] = NSMutableArray.init() as! [DanmuView];
             for info : DanmuView in self.fetchDanmakusArray {
                 if info.remainingTime == 0 {
@@ -132,9 +137,11 @@ extension DanmuManage {
                 }
             }
             OSSpinLockUnlock(&self.spinLock);
-            // MARK: 给每个danmaku赋予值5s
+            
             for danmaku : DanmuView in danmakuArrays {
                 danmaku.remainingTime = Float(Duration);
+                //NSLog(@"loadDanmakusFromFetchDanmakusArray---remainingTime:%f", danmaku.remainingTime);
+                // MARK - 给每个danmaku赋予值5s
             }
         });
         self.sourceQueue.cancelAllOperations();
@@ -147,15 +154,17 @@ extension DanmuManage {
             self.renderNewDanmakusForData();
         };
     }
-     // MARK: -- 所有视图遍历---时间递减
+    // Mark -- 所有视图遍历---时间递减
     func renderShowingDanmakusForInterval() {
         let disappearDanmakuArray = NSMutableArray();
         self.renderingDanmakusArray.enumerateObjects({ (value, idx, stop) in
-//            print(value, idx)
+            //            print(value, idx)
             let danmaku : DanmuView = value as! DanmuView;
+            
             if (danmaku.remainingTime != nil) {
                 danmaku.remainingTime = danmaku.remainingTime! - Float(ljFrameInterval);
-                if (danmaku.remainingTime! <= Float(0.0)) {
+                //            print("renderDisplayingDanmakus:-\(String(describing: danmaku.remainingTime))");
+                if (danmaku.remainingTime! < Float(0.0) || danmaku.remainingTime! == Float(0.0) ) {
                     disappearDanmakuArray.add(danmaku);
                     OSSpinLockLock(&self.spinLock);
                     self.renderingDanmakusArray.removeObject(at: idx);
@@ -178,7 +187,7 @@ extension DanmuManage {
         }
     }
     
-     // MARK:  最后一步渲染-----显示
+    // MARK -   最后一步渲染-----显示
     func renderNewDanmaku(_ danmaku : DanmuView) {
         if !self.layoutNewDanmaku(danmaku) {
             return ;
@@ -194,15 +203,15 @@ extension DanmuManage {
                 cell?.frame = CGRect(x: danmaku.px!, y: danmaku.py!, width: (danmaku.size?.width)!, height: (danmaku.size?.height)!);
                 self.insertSubview(cell!, at: 20);
                 
-                if danmaku.remainingTime == nil {
+                if danmaku.remainingTime == nil{
                     danmaku.remainingTime = 0;
                 }
-                
-                UIView.animate(withDuration: Double(danmaku.remainingTime!), delay: 0, options: .curveLinear, animations: {
+                UIView.animate(withDuration:Double(danmaku.remainingTime!), delay: 0, options: .curveLinear, animations: {
                     let  yx : CGFloat = (cell!.size?.width)!;
                     cell?.frame = CGRect(x: -yx, y: (cell?.py!)!, width: (cell?.size!.width)!, height: (cell?.size!.height)!);
                 }, completion: { (finished : Bool) in
-                });
+                    
+                })
             }
         };
     }
@@ -224,10 +233,11 @@ extension DanmuManage {
         
         return true;
     }
-   
-     // MARK: -- 通道判断&高度返回
+    
+    //#pragma mark -- 通道判断&高度返回
     //1.当前通道是有视图的话，进行碰撞判断
     //2.当前通道没view的直接返回显示的高度
+    
     func layoutPyWithLRDanmaku(_ danmaku : DanmuView) -> Float {
         let maxPyIndex : Int = Int(self.bounds.height) / Int(CellHeight);
         let trajectory : NSMutableDictionary = self.showingDanmakusTrajectoryDict;
@@ -240,23 +250,25 @@ extension DanmuManage {
             if (tempDanmaku == nil) {
                 danmaku.yIdx = index;
                 trajectory[key] = danmaku;
+                
                 //返回的高度
-                // print("当前通道没view的直接返回显示的高度:%d----\(index)");
+                //                print("当前通道没view的直接返回显示的高度:%d----\(index)");
                 return Float((CellHeight + CellSpace) * index);
             }
             //当前通道是有视图的话，进行碰撞判断
             if (!self.judgeHitWithPreDanmaku(tempDanmaku!, danmaku)) {
                 danmaku.yIdx = index;
                 trajectory[key] = danmaku;
-                //print("当前通道有视图\(cellHeight * index)");
+                //NSLog(@"当前通道有视图 * index %d----",cellHeight * index);
                 return Float((CellHeight + CellSpace) * index);
             }
         }
         return -1;
     }
     
-    // MARK: 弹幕碰撞检测 YES:会碰撞  NO：不会碰撞
+    //弹幕碰撞检测 YES:会碰撞  NO：不会碰撞
     func judgeHitWithPreDanmaku(_ preDanmaku : DanmuView , _ danmaku : DanmuView) -> Bool {
+        
         if preDanmaku.remainingTime != nil {
             //1.前一个弹幕是否还在移动？【显示时间每次递减0.2s】
             if (preDanmaku.remainingTime! <= Float(0.0)) {
@@ -284,7 +296,8 @@ extension DanmuManage {
     }
     
     func pauseShowingDanmakus() {
-        if ((self.visibleDanmakus()?.count) != nil){
+        if ((self.visibleDanmakus()?.count) != nil)
+        {
             let danmakus = self.visibleDanmakus() as! [DanmuView];
             DispatchQueue.main.async {
                 for danmaku : DanmuView in danmakus{
@@ -298,30 +311,35 @@ extension DanmuManage {
     
     func visibleDanmakus() -> NSArray? {
         var renderingDanmakus : NSArray?;
-        self.renderQueue.async() {
-           renderingDanmakus = NSArray.init(array: self.renderingDanmakusArray);
-        };
+        //        self.renderQueue.async() {
+        renderingDanmakus = NSArray.init(array: self.renderingDanmakusArray);
+        print("-------\(String(describing: renderingDanmakus))");
+        
+        //            return (self.renderingDanmakus);
+        //        };
         return (renderingDanmakus);
     }
     
     func resumeShowingDanmakus(){
-        if ((self.visibleDanmakus()?.count) != nil) {
+        
+        if ((self.visibleDanmakus()?.count) != nil)
+        {
             let renderingDanmakus = self.visibleDanmakus() as! [DanmuView];
-            for cell : DanmuView in renderingDanmakus{
-                if cell.remainingTime == nil {
-                    cell.remainingTime = 0;
+            for danmaku : DanmuView in renderingDanmakus{
+                if danmaku.remainingTime == nil{
+                    danmaku.remainingTime = 0;
                 }
-
-                UIView.animate(withDuration: Double(cell.remainingTime!), delay: 0, options: .curveLinear, animations: {
-                    let  yx : CGFloat = (cell.size?.width)!;
-                    cell.frame = CGRect(x: -yx, y: (cell.py!), width: (cell.size!.width), height: (cell.size!.height));
-                }, completion: { (finished : Bool) in
+                
+                UIView.animate(withDuration: Double(danmaku.remainingTime!), delay: 0, options: .curveLinear, animations: {
+                    let  yx : CGFloat = (danmaku.size?.width)!;
+                    danmaku.frame = CGRect(x: -yx, y: danmaku.py!, width: danmaku.size!.width, height: danmaku.size!.height);
+                }, completion: { (finished) in
+                    
                 });
             }
         }
     }
-    
-     // MARK: 弹幕重用---避免很多弹幕时，内存急剧增大
+    // 弹幕重用---避免很多弹幕时，内存急剧增大
     func recycleDanmaku(danmakuArrays : Array<DanmuView>){
         if danmakuArrays.count == 0 {
             return;
@@ -332,12 +350,12 @@ extension DanmuManage {
                 danmaku.removeFromSuperview();
                 danmaku.yIdx = -1;
                 danmaku.remainingTime = 0;
-                self.recycleCellToReusePool(danmaku);
+                self.recycleCellToReusePool(danmakuCell: danmaku);
             }
         };
     }
     
-    func recycleCellToReusePool(_ danmakuCell : DanmuView) {
+    func recycleCellToReusePool(danmakuCell : DanmuView) {
         let identifier = danmakuCell.reuseIdentifier;
         if identifier == nil {
             return;
@@ -352,7 +370,7 @@ extension DanmuManage {
         OSSpinLockUnlock(&self.spinLock);
     }
     
-    func registerClass(_ cellClass : AnyClass, _ identifier : String?) {
+    func registerClass(cellClass : AnyClass, identifier : String?) {
         if identifier == nil {
             return;
         }
@@ -360,25 +378,33 @@ extension DanmuManage {
     }
     
     func dequeueReusableDanmaWithIdentifier(_ identifier : String) -> DanmuView? {
+        
         var cells : NSMutableArray?;
         if (self.cellReusePool.object(forKey:identifier) != nil){
             cells = (self.cellReusePool.object(forKey:identifier) as! NSMutableArray) ;
         }
-
+        
         if cells?.count == 0 && (self.cellClassInfo.object(forKey:identifier) != nil)
         {
             let cellClass : DanmuView = self.cellClassInfo.object(forKey:identifier) as! DanmuView;
+            //            let danmucell = cellClass.init(frame:CGRect(x: 0, y: 0, width: 0, height: 25));
             return cellClass.initWithReuseIdentifier(identifier) as? DanmuView;
         }
         OSSpinLockLock(&self.spinLock);
         
         var cell : DanmuView?;
         if cells?.lastObject != nil{
+            //            let cell : DanmuView = cells?.lastObject as! DanmuView;
             cell = cells?.lastObject as? DanmuView;
             cells?.removeLastObject();
+            
         }
         OSSpinLockUnlock(&self.spinLock);
         return cell;
+        //        let cell : DanmuView = cells!.lastObject as! DanmuView;
+        //        cells?.removeLastObject();
+        //        OSSpinLockUnlock(&self.spinLock);
+        //        return nil;
     }
 }
 

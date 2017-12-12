@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.danmuMange = DanmuManage.init(frame: CGRect(x: 0, y: 0, width: AppWidth, height: 300));
-        self.danmuMange?.registerClass(DanmuView.layerClass ,"cell");
+        self.danmuMange?.registerClass(cellClass: DanmuView.layerClass ,identifier: "cell");
         self.view.addSubview(self.danmuMange!);
     }
 }
@@ -22,17 +22,17 @@ class ViewController: UIViewController {
 extension ViewController {
     
     @IBAction func StartAction(_ sender: Any) {
-        print(sender);
-        self.danmuMange?.prePlay();
+//        print(sender);
+        self.danmuMange?.play();
     }
 
     @IBAction func PauseAction(_ sender: Any) {
-        print(sender);
+        //print(sender);
         self.danmuMange?.pause();
     }
     
     @IBAction func StopAction(_ sender: Any) {
-        print(sender);
+        //print(sender);
         self.danmuMange?.stop();
     }
     
