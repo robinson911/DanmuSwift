@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>D658L33AS9.com.transfar.TransfarShipper</string>
+	<string>D658L33AS9.com.transfar.transfarShipper</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>D658L33AS9.com.transfar.TransfarShipper</string>
+		<string>D658L33AS9.com.transfar.transfarShipper</string>
 	</array>
 </dict>
 </plist>

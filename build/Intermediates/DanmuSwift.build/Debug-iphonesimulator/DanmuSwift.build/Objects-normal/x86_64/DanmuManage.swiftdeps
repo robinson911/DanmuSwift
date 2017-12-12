@@ -120,6 +120,7 @@ depends-member:
 - !private ["So15CALayerDelegateP", "OSSpinLockUnlock"]
 - ["So15CALayerDelegateP", "OperationQueue"]
 - !private ["So15CALayerDelegateP", "RunLoop"]
+- !private ["So15CALayerDelegateP", "String"]
 - !private ["So15CALayerDelegateP", "UIFont"]
 - !private ["So15CALayerDelegateP", "UIView"]
 - !private ["So15CALayerDelegateP", "animate"]
@@ -201,6 +202,7 @@ depends-member:
 - !private ["s7CVarArgP", "OSSpinLockUnlock"]
 - ["s7CVarArgP", "OperationQueue"]
 - !private ["s7CVarArgP", "RunLoop"]
+- !private ["s7CVarArgP", "String"]
 - !private ["s7CVarArgP", "UIFont"]
 - !private ["s7CVarArgP", "UIView"]
 - !private ["s7CVarArgP", "add"]
@@ -302,6 +304,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "OSSpinLockUnlock"]
 - ["s28CustomDebugStringConvertibleP", "OperationQueue"]
 - !private ["s28CustomDebugStringConvertibleP", "RunLoop"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
 - !private ["s28CustomDebugStringConvertibleP", "UIFont"]
 - !private ["s28CustomDebugStringConvertibleP", "UIView"]
 - !private ["s28CustomDebugStringConvertibleP", "add"]
@@ -419,6 +422,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "OSSpinLockUnlock"]
 - ["s23CustomStringConvertibleP", "OperationQueue"]
 - !private ["s23CustomStringConvertibleP", "RunLoop"]
+- !private ["s23CustomStringConvertibleP", "String"]
 - !private ["s23CustomStringConvertibleP", "UIFont"]
 - !private ["s23CustomStringConvertibleP", "UIView"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
@@ -549,7 +553,7 @@ depends-member:
 - ["10DanmuSwift0A6ManageC", "loadDanmakusFromFetchDanmakusArray"]
 - ["10DanmuSwift0A6ManageC", "pause"]
 - ["10DanmuSwift0A6ManageC", "pauseShowingDanmakus"]
-- ["10DanmuSwift0A6ManageC", "prePlay"]
+- ["10DanmuSwift0A6ManageC", "play"]
 - !private ["10DanmuSwift0A6ManageC", "print"]
 - ["10DanmuSwift0A6ManageC", "recycleCellToReusePool"]
 - ["10DanmuSwift0A6ManageC", "recycleDanmaku"]
@@ -625,6 +629,7 @@ depends-member:
 - !private ["s9EquatableP", "OSSpinLockUnlock"]
 - ["s9EquatableP", "OperationQueue"]
 - !private ["s9EquatableP", "RunLoop"]
+- !private ["s9EquatableP", "String"]
 - !private ["s9EquatableP", "UIFont"]
 - !private ["s9EquatableP", "UIView"]
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
@@ -639,6 +644,7 @@ depends-member:
 - !private ["s9EquatableP", "clearScreen"]
 - !private ["s9EquatableP", "commonModes"]
 - !private ["s9EquatableP", "count"]
+- !private ["s9EquatableP", "curveLinear"]
 - !private ["s9EquatableP", "displayLink"]
 - !private ["s9EquatableP", "enumerateObjects"]
 - !private ["s9EquatableP", "fatalError"]
@@ -702,6 +708,7 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "add"]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "curveLinear"]
 - !private ["s25ExpressibleByArrayLiteralP", "enumerateObjects"]
 - !private ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "lastObject"]
@@ -746,6 +753,7 @@ depends-member:
 - !private ["s8HashableP", "OSSpinLockUnlock"]
 - ["s8HashableP", "OperationQueue"]
 - !private ["s8HashableP", "RunLoop"]
+- !private ["s8HashableP", "String"]
 - !private ["s8HashableP", "UIFont"]
 - !private ["s8HashableP", "UIView"]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
@@ -858,6 +866,7 @@ depends-member:
 - !private ["So8NSCodingP", "OSSpinLockUnlock"]
 - ["So8NSCodingP", "OperationQueue"]
 - !private ["So8NSCodingP", "RunLoop"]
+- !private ["So8NSCodingP", "String"]
 - !private ["So8NSCodingP", "UIFont"]
 - !private ["So8NSCodingP", "UIView"]
 - !private ["So8NSCodingP", "add"]
@@ -1038,7 +1047,7 @@ depends-member:
 - !private ["So8NSObjectC", "object"]
 - ["So8NSObjectC", "pause"]
 - ["So8NSObjectC", "pauseShowingDanmakus"]
-- ["So8NSObjectC", "prePlay"]
+- ["So8NSObjectC", "play"]
 - !private ["So8NSObjectC", "presentation"]
 - !private ["So8NSObjectC", "print"]
 - !private ["So8NSObjectC", "px"]
@@ -1098,6 +1107,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "OSSpinLockUnlock"]
 - ["So16NSObjectProtocolP", "OperationQueue"]
 - !private ["So16NSObjectProtocolP", "RunLoop"]
+- !private ["So16NSObjectProtocolP", "String"]
 - !private ["So16NSObjectProtocolP", "UIFont"]
 - !private ["So16NSObjectProtocolP", "UIView"]
 - !private ["So16NSObjectProtocolP", "add"]
@@ -1191,6 +1201,7 @@ depends-member:
 - ["So14OperationQueueC", "init"]
 - !private ["So14OperationQueueC", "maxConcurrentOperationCount"]
 - !private ["So14OperationQueueC", "name"]
+- !private ["s9OptionSetP", "curveLinear"]
 - !private ["s22RandomAccessCollectionP", "append"]
 - !private ["s22RandomAccessCollectionP", "count"]
 - !private ["s22RandomAccessCollectionP", "removeAll"]
@@ -1199,6 +1210,7 @@ depends-member:
 - ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "removeAll"]
 - !private ["s16RawRepresentableP", "commonModes"]
+- !private ["s16RawRepresentableP", "curveLinear"]
 - !private ["So7RunLoopC", "main"]
 - !private ["SC11RunLoopModeV", "commonModes"]
 - !private ["s8SequenceP", "add"]
@@ -1213,6 +1225,7 @@ depends-member:
 - !private ["s8SequenceP", "removeLastObject"]
 - !private ["s8SequenceP", "removeObject"]
 - !private ["s8SequenceP", "subscript"]
+- !private ["s10SetAlgebraP", "curveLinear"]
 - ["s13SignedIntegerP", "init"]
 - ["s13SignedNumericP", "init"]
 - !private ["s12StaticStringV", "init"]
@@ -1245,6 +1258,7 @@ depends-member:
 - !private ["So29UIAccessibilityIdentificationP", "OSSpinLockUnlock"]
 - ["So29UIAccessibilityIdentificationP", "OperationQueue"]
 - !private ["So29UIAccessibilityIdentificationP", "RunLoop"]
+- !private ["So29UIAccessibilityIdentificationP", "String"]
 - !private ["So29UIAccessibilityIdentificationP", "UIFont"]
 - !private ["So29UIAccessibilityIdentificationP", "UIView"]
 - !private ["So29UIAccessibilityIdentificationP", "animate"]
@@ -1316,6 +1330,7 @@ depends-member:
 - !private ["So12UIAppearanceP", "OSSpinLockUnlock"]
 - ["So12UIAppearanceP", "OperationQueue"]
 - !private ["So12UIAppearanceP", "RunLoop"]
+- !private ["So12UIAppearanceP", "String"]
 - !private ["So12UIAppearanceP", "UIFont"]
 - !private ["So12UIAppearanceP", "UIView"]
 - !private ["So12UIAppearanceP", "animate"]
@@ -1387,6 +1402,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "OSSpinLockUnlock"]
 - ["So21UIAppearanceContainerP", "OperationQueue"]
 - !private ["So21UIAppearanceContainerP", "RunLoop"]
+- !private ["So21UIAppearanceContainerP", "String"]
 - !private ["So21UIAppearanceContainerP", "UIFont"]
 - !private ["So21UIAppearanceContainerP", "UIView"]
 - !private ["So21UIAppearanceContainerP", "animate"]
@@ -1459,6 +1475,7 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "OSSpinLockUnlock"]
 - ["So17UICoordinateSpaceP", "OperationQueue"]
 - !private ["So17UICoordinateSpaceP", "RunLoop"]
+- !private ["So17UICoordinateSpaceP", "String"]
 - !private ["So17UICoordinateSpaceP", "UIFont"]
 - !private ["So17UICoordinateSpaceP", "UIView"]
 - !private ["So17UICoordinateSpaceP", "animate"]
@@ -1530,6 +1547,7 @@ depends-member:
 - !private ["So13UIDynamicItemP", "OSSpinLockUnlock"]
 - ["So13UIDynamicItemP", "OperationQueue"]
 - !private ["So13UIDynamicItemP", "RunLoop"]
+- !private ["So13UIDynamicItemP", "String"]
 - !private ["So13UIDynamicItemP", "UIFont"]
 - !private ["So13UIDynamicItemP", "UIView"]
 - !private ["So13UIDynamicItemP", "animate"]
@@ -1601,6 +1619,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "OSSpinLockUnlock"]
 - ["So18UIFocusEnvironmentP", "OperationQueue"]
 - !private ["So18UIFocusEnvironmentP", "RunLoop"]
+- !private ["So18UIFocusEnvironmentP", "String"]
 - !private ["So18UIFocusEnvironmentP", "UIFont"]
 - !private ["So18UIFocusEnvironmentP", "UIView"]
 - !private ["So18UIFocusEnvironmentP", "animate"]
@@ -1672,6 +1691,7 @@ depends-member:
 - !private ["So11UIFocusItemP", "OSSpinLockUnlock"]
 - ["So11UIFocusItemP", "OperationQueue"]
 - !private ["So11UIFocusItemP", "RunLoop"]
+- !private ["So11UIFocusItemP", "String"]
 - !private ["So11UIFocusItemP", "UIFont"]
 - !private ["So11UIFocusItemP", "UIView"]
 - !private ["So11UIFocusItemP", "animate"]
@@ -1745,6 +1765,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "OSSpinLockUnlock"]
 - ["So30UIPasteConfigurationSupportingP", "OperationQueue"]
 - !private ["So30UIPasteConfigurationSupportingP", "RunLoop"]
+- !private ["So30UIPasteConfigurationSupportingP", "String"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIFont"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIView"]
 - !private ["So30UIPasteConfigurationSupportingP", "animate"]
@@ -1851,7 +1872,7 @@ depends-member:
 - ["So11UIResponderC", "loadDanmakusFromFetchDanmakusArray"]
 - ["So11UIResponderC", "pause"]
 - ["So11UIResponderC", "pauseShowingDanmakus"]
-- ["So11UIResponderC", "prePlay"]
+- ["So11UIResponderC", "play"]
 - !private ["So11UIResponderC", "print"]
 - !private ["So11UIResponderC", "px"]
 - !private ["So11UIResponderC", "py"]
@@ -1903,6 +1924,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "OSSpinLockUnlock"]
 - ["So30UIResponderStandardEditActionsP", "OperationQueue"]
 - !private ["So30UIResponderStandardEditActionsP", "RunLoop"]
+- !private ["So30UIResponderStandardEditActionsP", "String"]
 - !private ["So30UIResponderStandardEditActionsP", "UIFont"]
 - !private ["So30UIResponderStandardEditActionsP", "UIView"]
 - !private ["So30UIResponderStandardEditActionsP", "animate"]
@@ -1974,6 +1996,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "OSSpinLockUnlock"]
 - ["So18UITraitEnvironmentP", "OperationQueue"]
 - !private ["So18UITraitEnvironmentP", "RunLoop"]
+- !private ["So18UITraitEnvironmentP", "String"]
 - !private ["So18UITraitEnvironmentP", "UIFont"]
 - !private ["So18UITraitEnvironmentP", "UIView"]
 - !private ["So18UITraitEnvironmentP", "animate"]
@@ -2080,7 +2103,7 @@ depends-member:
 - ["So6UIViewC", "loadDanmakusFromFetchDanmakusArray"]
 - ["So6UIViewC", "pause"]
 - ["So6UIViewC", "pauseShowingDanmakus"]
-- ["So6UIViewC", "prePlay"]
+- ["So6UIViewC", "play"]
 - !private ["So6UIViewC", "print"]
 - !private ["So6UIViewC", "px"]
 - !private ["So6UIViewC", "py"]
@@ -2109,6 +2132,7 @@ depends-member:
 - ["So6UIViewC", "visibleDanmakus"]
 - !private ["So6UIViewC", "yIdx"]
 - ["So6UIViewC", ""]
+- !private ["SC22UIViewAnimationOptionsV", "curveLinear"]
 - !private ["s14_ArrayProtocolP", "append"]
 - !private ["s14_ArrayProtocolP", "count"]
 - !private ["s14_ArrayProtocolP", "removeAll"]
@@ -2143,6 +2167,7 @@ depends-member:
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "OSSpinLockUnlock"]
 - ["s37_DefaultCustomPlaygroundQuickLookableP", "OperationQueue"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "RunLoop"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "String"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "UIFont"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "UIView"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "animate"]
@@ -2234,6 +2259,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "OSSpinLockUnlock"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "OperationQueue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "RunLoop"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIFont"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "add"]
@@ -2391,12 +2417,14 @@ depends-nominal:
 - !private "So9OS_objectC"
 - !private "So9OperationC"
 - "So14OperationQueueC"
+- !private "s9OptionSetP"
 - !private "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - !private "s16RawRepresentableP"
 - !private "So7RunLoopC"
 - !private "SC11RunLoopModeV"
 - "s8SequenceP"
+- !private "s10SetAlgebraP"
 - "s13SignedIntegerP"
 - "s13SignedNumericP"
 - !private "s12StaticStringV"
@@ -2420,6 +2448,7 @@ depends-nominal:
 - "So30UIResponderStandardEditActionsP"
 - "So18UITraitEnvironmentP"
 - "So6UIViewC"
+- !private "SC22UIViewAnimationOptionsV"
 - !private "s14_ArrayProtocolP"
 - "s23_BidirectionalIndexableP"
 - "s18_BitwiseOperationsP"
@@ -2461,4 +2490,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "8c76ced6ed2fa3bf64b1b0e30ad120bc"
+interface-hash: "730ee8a5bf3234a4d002537d29f74149"
